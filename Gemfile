@@ -45,3 +45,4 @@ end
 
 
 gem 'instagram'
+gem 'omniauth-facebook'
