@@ -6,11 +6,14 @@ class HomeController < ApplicationController
 
   # 人気の写真を10枚表示させておく
   def index
-    @medias = Instagram.media_popular({:count => 10})
+    @medias = Instagram.media_popular({:count => 1})
     
-    # Tag検索 :空の文字列が投げられるとエラーになる
+    # Tag検索
     if params[:search]
-      @searched_medias = Instagram.tag_recent_media(URI.encode(params[:search]), {:count => 10})
+      # 空文字判定 :empty?ではなくnil?ではエラーが出た
+      unless params[:search].empty?
+        @searched_medias = Instagram.tag_recent_media(URI.encode(params[:search]), {:count => 10})
+      end
     end
 
   end
