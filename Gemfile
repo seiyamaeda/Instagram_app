@@ -46,3 +46,4 @@ end
 
 gem 'instagram'
 gem 'omniauth-facebook'
+gem 'mysql2'

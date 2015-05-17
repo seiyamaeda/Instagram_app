@@ -14,13 +14,13 @@
 ActiveRecord::Schema.define(version: 20150517013445) do
 
   create_table "users", force: :cascade do |t|
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "name"
-    t.string   "oauth_token"
+    t.string   "provider",         limit: 255
+    t.string   "uid",              limit: 255
+    t.string   "name",             limit: 255
+    t.string   "oauth_token",      limit: 255
     t.datetime "oauth_expires_at"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
 end
