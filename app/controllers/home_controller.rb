@@ -6,7 +6,7 @@ class HomeController < ApplicationController
 
   # 人気の写真を10枚表示させておく
   def index
-    @medias = Instagram.media_popular({:count => 1})
+    @medias = Instagram.media_popular({:count => 3})
     
     # Tag検索
     if params[:search]
