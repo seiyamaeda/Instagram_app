@@ -7,13 +7,17 @@ class User < ActiveRecord::Base
       user.uid = auth.uid
 
       unless auth.info.blank?
-        user.name = auth.info.name
+				#user = User.new
+				user.name = auth.info.name
         #user.screen_name = auth.info.screen_name
         #user.image = auth.info.image
       end
 
       user.oauth_token = auth.credentials.token
       user.oauth_expires_at = Time.at(auth.credentials.expires_at) unless auth.credentials.expires_at.nil?
+
+      p user
+
       user.save!
     end
   end

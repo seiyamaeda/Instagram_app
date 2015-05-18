@@ -37,6 +37,7 @@ development:
   username: root
   password: root
   host: localhost
+  port: 3306
 
 test:
   adapter: mysql2
@@ -47,6 +48,7 @@ test:
   username: root
   password: root
   host: localhost
+  port: 3306
 
 production:
   adapter: mysql2
@@ -57,3 +59,4 @@ production:
   username: root
   password: root
   host: localhost
+  port: 3306

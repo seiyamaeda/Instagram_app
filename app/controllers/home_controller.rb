@@ -7,12 +7,12 @@ class HomeController < ApplicationController
   # 人気の写真を10枚表示させておく
   def index
     @medias = Instagram.media_popular({:count => 3})
-    
+
     # Tag検索
     if params[:search]
       # 空文字判定 :empty?ではなくnil?ではエラーが出た
       unless params[:search].empty?
-        @searched_medias = Instagram.tag_recent_media(URI.encode(params[:search]), {:count => 10})
+        @searched_medias = Instagram.tag_recent_media(URI.encode(params[:search]), {:count => 3})
       end
     end
 
@@ -27,3 +27,7 @@ class HomeController < ApplicationController
       #return Instagram.tag_recent_media(URI.encode("starwars", "photo"), {:count => 10})
     #end
 end
+
+#http://qiita.com/hilotter/items/628fd54785d3c892d048
+#http://kodasho.hateblo.jp/entry/2014/02/21/141548
+#http://railscasts.com/episodes/360-facebook-authentication?autoplay=true
